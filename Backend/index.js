@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const axios = require("axios"); // Make sure axios is imported
+const axios = require("axios");
 
 const app = express();
 app.use(express.json());
@@ -33,6 +33,6 @@ app.post("/authenticate", async (req, res) => {
   // return res.json({ username: username, secret: "sha256..." });
 });
 
-app.listen(3002, () => {
-  console.log("Server is running on port 3002");
+app.listen(3001, () => {
+  console.log("Server is running on port 3001");
 });

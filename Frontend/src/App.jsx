@@ -1,10 +1,15 @@
+import { useState } from "react";
 import "./styles.css";
+import AuthPage from "./AuthPage";
+import ChatsPage from "./ChatsPage";
 
-export default function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Heelo how are you!</h2>
-    </div>
-  );
+function App() {
+  const [user, setUser] = useState(undefined);
+
+  if (!user) {
+    return <AuthPage onAuth={(user) => setUser(user)} />;
+  } else {
+    return <ChatsPage user={user} />;
+  }
 }
+export default App;
